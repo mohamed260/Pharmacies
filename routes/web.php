@@ -23,6 +23,10 @@ Route::get('/create', function () {
     return view('create');
 })->middleware('auth');
 
+Route::get('/profile', function () {
+    return view('profile');
+})->middleware('auth');
+
 
 
 Route::group(['middleware' => ['admin']], function () {
@@ -35,8 +39,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/delete/city/{id}', [ CityController::class, 'destroy'])->name('deleteCity')->middleware('auth');
 });
 
-
-Route::get('/profile/{id}', [UserController::class, 'index'])->name('profile')->middleware('auth');
 
 
 Route::get('/edit/medicine/{id}', [ MedicineController::class, 'edit'])->name('edit')->middleware('auth');
