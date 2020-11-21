@@ -39,6 +39,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/delete/city/{id}', [ CityController::class, 'destroy'])->name('deleteCity')->middleware('auth');
 });
 
+Route::put('/update/profile/{id}', [ UserController::class, 'update'])->name('updateProfile')->middleware('auth');
+Route::get('/edit/profile/{id}', [ UserController::class, 'edit'])->name('editProfile')->middleware('auth');
 
 
 Route::get('/edit/medicine/{id}', [ MedicineController::class, 'edit'])->name('edit')->middleware('auth');

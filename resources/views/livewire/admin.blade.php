@@ -1,6 +1,6 @@
 <div>
     <div class="px-3 md:flex">
-        <div class="md:w-2/5 px-2">
+        <div class="md:w-2/5 md:px-2">
             <div class="mb-4">
                 @if (session()->has('message'))
                     <p class="alert alert-success">
@@ -25,7 +25,7 @@
                                 <a class="btn btn-primary" href="{{ route('editCity', $city->id) }}">Edit</a>
                                 <form class="inline-block" action="{{ route('deleteCity', $city->id) }}" method="POST">
                                     @csrf
-                                    @method('delete')
+                                    @method('DELETE')
                                     <button class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="md:w-2/5 px-2">
+        <div class="md:w-2/5 md:px-2">
             <div class="text-center mt-10 md:mt-2">
                 <h1 class="text-2xl font-bold text-gray-600">The Parmacies Are <span class=" text-indigo-500">{{ $count }}</span></h1>
             </div>

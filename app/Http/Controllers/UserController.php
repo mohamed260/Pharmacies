@@ -57,7 +57,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('editProfile', compact('user'));
     }
 
     /**
@@ -69,7 +71,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->location = $request->location;
+        $user->city_id = $request->city_id;
+        $user->password = $request->password;
+
+        $user->save();
+        
+        Session()->flash('message', 'You are Updated your information successfuly');
+
+        return view('profile');
     }
 
     /**
