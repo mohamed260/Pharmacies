@@ -78,7 +78,7 @@ class MedicineController extends Controller
 
         $medicine->save();
 
-        return view('create');
+        return redirect()->route('create');
     }
 
     /**

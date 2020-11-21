@@ -61,6 +61,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('profile', auth()->user()->id)}}">Profile</a>
+
+                                    @if (auth()->user()->email == "wwwalboss10@gmail.com")
+                                        <a class="dropdown-item" href="/admin">Admin Control</a>
+                                    @endif
+
                                     <a class="dropdown-item" href="/create">create</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

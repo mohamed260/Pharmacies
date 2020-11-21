@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\City;
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class CityController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('profile', compact('user'));
     }
 
     /**
@@ -41,10 +43,10 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(City $city)
+    public function show($id)
     {
         //
     }
@@ -52,46 +54,34 @@ class CityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $city = City::find($id);
-
-        return view('editCity', compact('city'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\City  $city
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $city = City::find($id);
-
-        $city->city = $request->city;
-
-        $city->save();
-
-        return view('admin');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\City  $city
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $city = City::find($id);
-
-        $city->delete();
-
-        return back();
+        //
     }
 }

@@ -21,12 +21,13 @@ class Search extends Component
         $search = '%'. $this->search . '%';
         $this->users = User::all();
         $this->cities = City::all();
-        if ($this->city == 0){
-        $this->medicines = Medicine::where('name', 'like', $search)->get();
+        if ($this->city == "0"){
+            $this->medicines = Medicine::where('name', 'like', $search)->get();
         }
-        $this->medicines = Medicine::where('name', 'like', $search)
-        ->where('user_id', $this->city)
-        ->get();
+            $this->medicines = Medicine::where('name', 'like', $search)
+            ->where('user_id', '!=' , $this->city)
+            ->get();
+        
         return view('livewire.search');
         
     }
