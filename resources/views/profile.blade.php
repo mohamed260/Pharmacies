@@ -48,6 +48,11 @@
     </div>
     <hr> --}}
     <div class="py-4">
+        <a href="{{ route('editPas', Auth::user()->id) }}">
+            Peculiarity
+        </a>
+    </div>
+    <div class="py-4">
     <a class="btn btn-primary block w-full" href="{{ route('editProfile', Auth::user()->id) }}">
         Edit
     </a>

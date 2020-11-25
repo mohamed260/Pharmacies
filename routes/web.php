@@ -44,7 +44,8 @@ Route::group(['middleware' => ['admin']], function () {
 
 Route::put('/update/profile/{id}', [ UserController::class, 'update'])->name('updateProfile')->middleware('auth');
 Route::get('/edit/profile/{id}', [ UserController::class, 'edit'])->name('editProfile')->middleware('auth');
-
+Route::get('/editPas/pass/{id}', [ UserController::class, 'editPas'])->name('editPas')->middleware('auth');
+Route::put('/update/pass/{id}', [ UserController::class, 'updatepas'])->name('updatePas')->middleware('auth');
 
 Route::get('/edit/medicine/{id}', [ MedicineController::class, 'edit'])->name('edit')->middleware('auth');
 Route::put('/update/medicine/{id}', [ MedicineController::class, 'update'])->name('update')->middleware('auth');

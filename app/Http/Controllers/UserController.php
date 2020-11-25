@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\City;
 
@@ -45,9 +46,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function editPas($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('editPas', compact('user'));
+    }
+
+    public function updatePas(Request $request, $id)
+    {
+        $oldPas = Hash::make($request['password']);
+
+        $pas = User::where('password', '=', $oldPas)->get();
+
+        return redirect()->route('editPas', compact('pas'));
     }
 
     /**
