@@ -14,7 +14,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin');
     }
 
     /**
@@ -77,7 +77,7 @@ class CityController extends Controller
 
         $city->save();
 
-        return view('admin');
+        return redirect()->route('admin');
     }
 
     /**

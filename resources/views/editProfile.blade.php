@@ -26,14 +26,17 @@
                         <label class="text-xl">Your City</label>
                         <select class="border px-2 py-1 rounded-lg w-full" name="city_id">
                         <option value="{{ $user->city->id }}">{{ $user->city->city }}</option>
+                        @foreach ($cities as $city)
+                        <option value="{{ $city->id }}">{{ $city->city }}</option>
+                        @endforeach
                         </select>
                     </div>
                     <hr>
-                    <div class="py-4">
+                    {{-- <div class="py-4">
                         <label class="text-xl">Your Password</label>
                         <input class="border px-2 py-1 rounded-lg w-full" type="password" name="password" value="{{ $user->password }}">
                     </div>
-                    <hr>
+                    <hr> --}}
 
                     <div class="py-4">
                         <button class="btn btn-success w-full">Update</button>

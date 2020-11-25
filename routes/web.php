@@ -19,20 +19,23 @@ use App\Http\Controllers\MedicineController;
 Route::get('/', function () {
     return view('master');
 });
-Route::get('/create', function () {
-    return view('create');
-})->middleware('auth');
 
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware('auth');
+// Route::get('/profile', function () {
+//     return view('profile');
+// })->middleware('auth');
+
+Route::get('/profile', [UserController::class, 'index'])->name('profile')->middleware('auth');
+
+Route::get('/create', [MedicineController::class, 'index'])->name('create')->middleware('auth');
 
 
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/admin', function () {
-        return view('admin');
-    })->middleware('auth');
+    // Route::get('/admin', function () {
+    //     return view('admin');
+    // })->middleware('auth');
+
+    Route::get('/admin', [CityController::class, 'index'])->name('admin')->middleware('auth');
 
     Route::get('/edit/city/{id}', [ CityController::class, 'edit'])->name('editCity')->middleware('auth');
     Route::put('/update/city/{id}', [ CityController::class, 'update'])->name('updateCity')->middleware('auth');

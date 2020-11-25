@@ -31,7 +31,4 @@ class Admin extends Component
         Session()->flash('message','The City Was Adedd!');
     }
 
-    public function counter(){
-        
-    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\City;
 
 class UserController extends Controller
 {
@@ -12,9 +13,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        //
+        return view('profile');
     }
 
     /**
@@ -58,8 +59,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        $cities = City::where('id', '!=', $user->city_id)->get();
 
-        return view('editProfile', compact('user'));
+        return view('editProfile', compact('user', 'cities'));
     }
 
     /**
@@ -77,13 +79,12 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->location = $request->location;
         $user->city_id = $request->city_id;
-        $user->password = $request->password;
 
         $user->save();
         
         Session()->flash('message', 'You are Updated your information successfuly');
 
-        return view('profile');
+        return redirect()->route('profile');
     }
 
     /**

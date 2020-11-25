@@ -54,7 +54,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->location}}</td>
-                        <td>{{$user->city->city}}</td>
+                        <td>{{$user->city['city']}}</td>
                     </tr>    
                     @endforeach
                 </table>

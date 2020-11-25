@@ -39,16 +39,16 @@
         </div>
     </div>
     <hr>
-    <div class="py-4 md:w-1/2 md:px-4">
+    {{-- <div class="py-4 md:w-1/2 md:px-4">
         <h1 class="text-2xl">Pharmacy Password</h1>
         <div class="flex justify-between mt-2">
         <input type="password" value="{{ Auth::user()->password }}">
            
         </div>
     </div>
-    <hr>
+    <hr> --}}
     <div class="py-4">
-    <a class="btn btn-primary block w-full" href="#">
+    <a class="btn btn-primary block w-full" href="{{ route('editProfile', Auth::user()->id) }}">
         Edit
     </a>
      
