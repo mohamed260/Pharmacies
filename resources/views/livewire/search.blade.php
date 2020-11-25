@@ -3,9 +3,9 @@
     <div class="px-2 md:flex">
         <div class="md:w-1/2 px-4">
             <select class="border py-1 rounded-lg shadow focus:outline-none" wire:model="city">
-                <option value="0">all</option>
+                <option value="all">All</option>
                 @foreach ($cities as $city)
-                <option value="{{ $city->id }}">{{ $city->city }}</option>
+                <option value="{{ $city->city }}">{{ $city->city }}</option>
                 @endforeach
             
             </select>

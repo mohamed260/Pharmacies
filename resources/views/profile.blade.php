@@ -48,7 +48,7 @@
     </div>
     <hr>
     <div class="py-4">
-    <a class="btn btn-primary block w-full" href="{{ route('editProfile', Auth::user()->id) }}">
+    <a class="btn btn-primary block w-full" href="#">
         Edit
     </a>
      
