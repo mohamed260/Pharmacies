@@ -1,6 +1,6 @@
-<div>
-    <div class="px-3 md:flex">
-        <div class="md:w-2/5 md:px-2">
+<div class="md:px-20">
+    <div class="border px-2 py-3 mx-2 rounded shadow bg-gray-200">
+        <div class="">
             <div class="mb-4">
                 @if (session()->has('message'))
                     <p class="alert alert-success">
@@ -37,8 +37,8 @@
             </div>
         </div>
 
-        <div class="md:w-2/5 md:px-2">
-            <div class="text-center mt-10 md:mt-2">
+        <div class="">
+            <div class="text-center mt-10">
                 <h1 class="text-2xl font-bold text-gray-600">The Parmacies Are <span class=" text-indigo-500">{{ $count }}</span></h1>
             </div>
             <div>

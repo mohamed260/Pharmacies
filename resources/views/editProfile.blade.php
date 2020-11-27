@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="px-3">
-        <div>
-        <form action="{{ route('updateProfile', $user->id) }}" method="POST">
+    <div class="md:px-20">
+        <div class="mx-2 px-2 border shadow bg-gray-200">
+            <form action="{{ route('updateProfile', $user->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div>

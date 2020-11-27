@@ -28,9 +28,5 @@ class Create extends Component
         Session()->flash('message', 'The medicine was added succussfuly!');
     }
 
-    public function search(){
-        $search = '%'. $this->searchMedicine . '%';
-        
-        $this->searchMedicine = Medicine::where('name', 'like', $search)->get();
-    }
+    
 }

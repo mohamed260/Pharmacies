@@ -78,6 +78,8 @@ class MedicineController extends Controller
 
         $medicine->save();
 
+        Session()->flash('message', 'The Medicine Was Updated!');
+
         return redirect()->route('create');
     }
 
